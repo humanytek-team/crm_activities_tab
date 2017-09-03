@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="crm_activities_tab_form_view">
+            <field name="name">crm.lead.activities_tab.form.opportunity</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+            <field name="arch" type="xml">
+                <page name="lead" position="after">
+                    <page name="activities" string="Activities">
+                        <field name="logs">
+                            <tree create="false" editable="bottom">
+                                <field name="create_date" readonly="1"/>
+                                <field name="next_activity_id" readonly="1"/>
+                                <field name="title_action" readonly="1"/>
+                                <field name="planned_revenue" readonly="1"/>
+                                <field name="date_deadline" readonly="1"/>
+                                <!-- TODO Use HTML syntax -->
+                                <!-- <field name="note" readonly="1"/> -->
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>
+                </page>
+            </field>
+        </record>
+    </data>
+</odoo>
